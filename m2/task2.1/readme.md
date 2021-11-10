@@ -1,0 +1,1 @@
+In first tasks I interrupted in such interesting ptoblem vith my PC and his CPU virtual ability. I had no reason to check bios and find resolve. So today I had finished a small task, but i want to do myself all of them).
