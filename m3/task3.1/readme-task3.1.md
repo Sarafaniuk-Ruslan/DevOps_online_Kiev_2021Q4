@@ -30,3 +30,45 @@ IP-address src: 176.106.2.25
 IP-address dst: 192.168.80.101
 TCP-port src: 57451
 TCP-port dst: 3389
+
+
+Task 3.2
+
+First of all, I did upgrate by adding new ethernet port for routing. Then, I did insidness grid.
+
+ISP1:
+- GE1/0
+- GE2/0
+
+ISP2:
+- GE1/0
+- GE3/0
+
+ISP3:
+- GE2/0
+- GE3/0
+
+New information for me was, adding and setting VLAN interface but actually it has not been difficult. I was setting all config by 20 minutes at all.
+
+VLAN Number: 2
+VLAN Name: WS1
+
+VLAN Number: 3
+VLAN Name: WS2
+
+VLAN Number: 4
+VLAN Name: WS3
+
+I changed conf in first FE port from access to trunk mode which supports VLAN specifications. After that, I did this changes on router ISP3
+
+Router(config)# interface GigabitEthernet0/0.2
+Router(config-subif)#encapsulation dot1Q 2
+Router(config-subif)#ip address 11.30.1.1 255.255.255.192
+
+Router(config)# interface GigabitEthernet0/0.3
+Router(config-subif)#encapsulation dot1Q 3
+Router(config-subif)#ip address 11.30.1.65 255.255.255.192
+
+Router(config)# interface GigabitEthernet0/0.4
+Router(config-subif)#encapsulation dot1Q 4
+Router(config-subif)#ip address 11.30.1.129 255.255.255.192
