@@ -72,3 +72,35 @@ Router(config-subif)#ip address 11.30.1.65 255.255.255.192
 Router(config)# interface GigabitEthernet0/0.4
 Router(config-subif)#encapsulation dot1Q 4
 Router(config-subif)#ip address 11.30.1.129 255.255.255.192
+
+
+task3.3
+
+add routes on each router in my grid. 
+
+For this routers setup was:
+
+ISP1:
+
+11.30.1.0/24 via 40.11.1.66
+RIP: 11.0.0.0, 40.0.0.0
+
+
+ISP2: 
+
+11.30.1.0/24 via 40.11.1.130
+10.1.30.0/24 via 40.11.1.1
+RIP: 192.0.0.0, 40.0.0.0
+
+
+ISP3:
+
+10.30.1.0/24 via 40.11.1.65
+RIP: 10.0.0.0, 40.0.0.0
+
+
+task3.4
+
+I made 2 new dns domains by using 2 web servers 11.30.1.50 and 11.30.1.100. And called them domain1.com/domain2.com. Verified working by pinging their domain names in interprise grid, but before I have edited dhcp servers in enterprise server and home route server. 
+Dont know why, but I cant change options in firewall page on the home route.
+Finally, I edit information in web (index.html) files and cheked it out.
